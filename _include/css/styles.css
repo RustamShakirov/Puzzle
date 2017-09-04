@@ -36,3 +36,165 @@ body {
   color: #464242;
   top: 10px;
 }
+
+.setka {
+ width: 375px;
+ height: 375px;
+ position: relative;
+ margin: 30px;
+}
+
+.setka .b1{
+ width: 120px;
+ height: 120px;
+ border: 1px solid blue;
+ border-right: none;
+ border-bottom: none;
+ float: left;
+}
+
+.setka .b2{
+ width: 120px;
+ height: 120px;
+ border: 1px solid blue;
+ border-bottom: none;
+ border-right: none;
+ float: left;
+}
+
+.setka .b3{
+ width: 120px;
+ height: 120px;
+ border: 1px solid blue;
+ border-bottom: none;
+ float: left;
+}
+
+.setka .b4{
+ width: 120px;
+ height: 120px;
+ border: 1px solid blue;
+ border-right: none;
+ border-bottom: none;
+ float: left;
+}
+
+.setka .b5{
+ width: 120px;
+ height: 120px;
+ border: 1px solid blue;
+ border-right: none;
+ border-bottom: none;
+ float: left;
+}
+
+.setka .b6{
+ width: 120px;
+ height: 120px;
+ border: 1px solid blue;
+ border-bottom: none;
+ float: left;
+}
+
+.setka .b7{
+ width: 120px;
+ height: 120px;
+ border: 1px solid blue;
+ border-right: none;
+ float: left;
+}
+
+.setka .b8{
+ width: 120px;
+ height: 120px;
+ border: 1px solid blue;
+ border-right: none;
+ float: left;
+}
+
+.setka .b9{
+ width: 120px;
+ height: 120px;
+ border: 1px solid blue;
+ float: left;
+}
+
+.box {
+ width: 380px;
+ height: 380px;
+ margin-left: 550px;
+ margin-top: -410px;
+ position: absolute;
+}
+
+.box .img1{
+ width: 120px;
+ height: 120px;
+ background-image: url('../img/0_0.png');
+ float: left;
+ margin: 3px;
+}
+
+.box .img2{
+ width: 120px;
+ height: 120px;
+ background-image: url('../img/0_1.png');
+ float: left;
+ margin: 3px;
+}
+
+.box .img3{
+ width: 120px;
+ height: 120px;
+ background-image: url('../img/0_2.png');
+ float: left;
+ margin: 3px;
+}
+
+.box .img4{
+ width: 120px;
+ height: 120px;
+ background-image: url('../img/1_0.png');
+ float: left;
+ margin: 3px;
+}
+
+.box .img5{
+ width: 120px;
+ height: 120px;
+ background-image: url('../img/1_1.png');
+ float: left;
+ margin: 3px;
+}
+
+.box .img6{
+ width: 120px;
+ height: 120px;
+ background-image: url('../img/1_2.png');
+ float: left;
+ margin: 3px;
+}
+
+.box .img7{
+ width: 120px;
+ height: 120px;
+ background-image: url('../img/2_0.png');
+ float: left;
+ margin: 3px;
+}
+
+.box .img8{
+ width: 120px;
+ height: 120px;
+ background-image: url('../img/2_1.png');
+ float: left;
+ margin: 3px;
+}
+
+.box .img9{
+ width: 120px;
+ height: 120px;
+ background-image: url('../img/2_2.png');
+ float: left;
+ margin: 3px;
+}
