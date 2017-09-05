@@ -37,164 +37,113 @@ body {
   top: 10px;
 }
 
-.setka {
- width: 375px;
- height: 375px;
- position: relative;
- margin: 30px;
+.setka  {
+  width: 375px;
+  height: 375px;
+  margin: 30px;
+  /*border: 1px solid white;*/
+}
+
+.setka .b{
+  width: 120px;
+  height: 120px;
+  border: 1px solid blue;
+  float: left;
 }
 
 .setka .b1{
- width: 120px;
- height: 120px;
- border: 1px solid blue;
- border-right: none;
- border-bottom: none;
- float: left;
+  border-right:  none;
+  border-bottom: none;
 }
 
 .setka .b2{
- width: 120px;
- height: 120px;
- border: 1px solid blue;
- border-bottom: none;
- border-right: none;
- float: left;
+  border-bottom: none;
+  border-right: none;
 }
 
 .setka .b3{
- width: 120px;
- height: 120px;
- border: 1px solid blue;
- border-bottom: none;
- float: left;
+  border-bottom: none
 }
 
 .setka .b4{
- width: 120px;
- height: 120px;
- border: 1px solid blue;
- border-right: none;
- border-bottom: none;
- float: left;
+  border-right: none;
+  border-bottom: none;
 }
 
 .setka .b5{
- width: 120px;
- height: 120px;
- border: 1px solid blue;
- border-right: none;
- border-bottom: none;
- float: left;
+  border-right: none;
+  border-bottom: none;
 }
 
 .setka .b6{
- width: 120px;
- height: 120px;
- border: 1px solid blue;
- border-bottom: none;
- float: left;
+  border-bottom: none;
 }
 
 .setka .b7{
- width: 120px;
- height: 120px;
- border: 1px solid blue;
- border-right: none;
- float: left;
+  border-right: none;
 }
 
 .setka .b8{
- width: 120px;
- height: 120px;
- border: 1px solid blue;
- border-right: none;
- float: left;
+  border-right: none;
 }
 
 .setka .b9{
- width: 120px;
- height: 120px;
- border: 1px solid blue;
- float: left;
 }
 
 .box {
- width: 380px;
- height: 380px;
- margin-left: 550px;
- margin-top: -410px;
- position: absolute;
+  width: 380px;
+  height: 380px;
+  margin-left: 500px;
+  margin-top: -410px;
+  position: relative;
+  /*border: 1px solid black;*/
+}
+
+.box .img{
+  width: 120px;
+  height: 120px;
+  position: absolute;
 }
 
 .box .img1{
- width: 120px;
- height: 120px;
- background-image: url('../img/0_0.png');
- float: left;
- margin: 3px;
+  background-image: url('../img/0_0.png');
 }
 
 .box .img2{
- width: 120px;
- height: 120px;
- background-image: url('../img/0_1.png');
- float: left;
- margin: 3px;
+  background-image: url('../img/0_1.png');
 }
 
 .box .img3{
- width: 120px;
- height: 120px;
- background-image: url('../img/0_2.png');
- float: left;
- margin: 3px;
+  background-image: url('../img/0_2.png');
 }
 
 .box .img4{
- width: 120px;
- height: 120px;
- background-image: url('../img/1_0.png');
- float: left;
- margin: 3px;
+  background-image: url('../img/1_0.png');
 }
 
 .box .img5{
- width: 120px;
- height: 120px;
- background-image: url('../img/1_1.png');
- float: left;
- margin: 3px;
+  background-image: url('../img/1_1.png');
 }
 
 .box .img6{
- width: 120px;
- height: 120px;
- background-image: url('../img/1_2.png');
- float: left;
- margin: 3px;
+  background-image: url('../img/1_2.png');
 }
 
 .box .img7{
- width: 120px;
- height: 120px;
- background-image: url('../img/2_0.png');
- float: left;
- margin: 3px;
+  background-image: url('../img/2_0.png');
 }
 
 .box .img8{
- width: 120px;
- height: 120px;
- background-image: url('../img/2_1.png');
- float: left;
- margin: 3px;
+  background-image: url('../img/2_1.png');
 }
 
 .box .img9{
- width: 120px;
- height: 120px;
- background-image: url('../img/2_2.png');
- float: left;
- margin: 3px;
+  background-image: url('../img/2_2.png');
+  }
+
+.mainbox {
+  width: 900px;
+  height: 420px;
+  display: inline-block;
+  /*border: 1px solid red;*/
 }
