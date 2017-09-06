@@ -38,9 +38,9 @@ body {
 }
 
 .setka  {
-  width: 380px;
-  height: 380px;
-  display: inline-block;
+  width: 375px;
+  height: 375px;
+  margin: 30px;
   /*border: 1px solid white;*/
 }
 
@@ -51,23 +51,18 @@ body {
   float: left;
 }
 
-.setka .b0{
+.setka .b1{
   border-right:  none;
   border-bottom: none;
 }
 
-.setka .b1{
+.setka .b2{
   border-bottom: none;
   border-right: none;
-}
-
-.setka .b2{
-  border-bottom: none
 }
 
 .setka .b3{
-  border-right: none;
-  border-bottom: none;
+  border-bottom: none
 }
 
 .setka .b4{
@@ -76,11 +71,12 @@ body {
 }
 
 .setka .b5{
+  border-right: none;
   border-bottom: none;
 }
 
 .setka .b6{
-  border-right: none;
+  border-bottom: none;
 }
 
 .setka .b7{
@@ -88,11 +84,18 @@ body {
 }
 
 .setka .b8{
+  border-right: none;
+}
+
+.setka .b9{
 }
 
 .box {
-  display: inline-block;
-  margin-left: 400px;
+  width: 380px;
+  height: 380px;
+  margin-left: 500px;
+  margin-top: -410px;
+  position: relative;
   /*border: 1px solid black;*/
 }
 
@@ -102,39 +105,39 @@ body {
   position: absolute;
 }
 
-.box .img0{
+.box .img1{
   background-image: url('../img/0_0.png');
 }
 
-.box .img1{
+.box .img2{
   background-image: url('../img/0_1.png');
 }
 
-.box .img2{
+.box .img3{
   background-image: url('../img/0_2.png');
 }
 
-.box .img3{
+.box .img4{
   background-image: url('../img/1_0.png');
 }
 
-.box .img4{
+.box .img5{
   background-image: url('../img/1_1.png');
 }
 
-.box .img5{
+.box .img6{
   background-image: url('../img/1_2.png');
 }
 
-.box .img6{
+.box .img7{
   background-image: url('../img/2_0.png');
 }
 
-.box .img7{
+.box .img8{
   background-image: url('../img/2_1.png');
 }
 
-.box .img8{
+.box .img9{
   background-image: url('../img/2_2.png');
   }
 
