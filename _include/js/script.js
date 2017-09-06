@@ -13,7 +13,7 @@ $(document).ready(function() {
     b.appendTo(data.box);
     c.push(b)
   }
-  console.log(c)
+  
   //c[2].css({left: 200})
 
   var s = []
