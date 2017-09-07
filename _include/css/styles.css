@@ -51,65 +51,49 @@ body {
   height: 120px;
   border: 1px solid black;
   float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .setka .b0{
   border-right:  none;
   border-bottom: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+  }
 
 .setka .b1{
   border-bottom: none;
   border-right: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+  }
 
 .setka .b2{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-bottom: none
+    border-bottom: none
 
 }
 
 .setka .b3{
   border-right: none;
   border-bottom: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+  }
 
 .setka .b4{
   border-right: none;
   border-bottom: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+  }
 
 .setka .b5{
   border-bottom: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+  }
 
 .setka .b6{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-right: none;
+    border-right: none;
 }
 
 .setka .b7{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-right: none;
+    border-right: none;
 }
 
 .setka .b8{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
+  }
 
 .box {
   width: 360px;
@@ -117,6 +101,8 @@ body {
   display: inline-block;
   position: relative;
   margin-left: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border: 1px solid green;*/
 }
 
@@ -124,60 +110,43 @@ body {
   width: 120px;
   height: 120px;
   position: absolute;
+
 }
 
 .box .img0{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   background-image: url('../img/0_0.png');
 }
 
 .box .img1{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-image: url('../img/0_1.png');
+    background-image: url('../img/0_1.png');
 }
 
 .box .img2{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   background-image: url('../img/0_2.png');
 }
 
 .box .img3{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   background-image: url('../img/1_0.png');
 }
 
 .box .img4{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   background-image: url('../img/1_1.png');
 }
 
 .box .img5{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-image: url('../img/1_2.png');
+    background-image: url('../img/1_2.png');
 }
 
 .box .img6{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   background-image: url('../img/2_0.png');
 }
 
 .box .img7{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   background-image: url('../img/2_1.png');
 }
 
 .box .img8{
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-image: url('../img/2_2.png');
+    background-image: url('../img/2_2.png');
   }
 
 .mainbox {
