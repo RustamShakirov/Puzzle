@@ -31,7 +31,7 @@ body {
 
 .scene .title {
   display: inline-block;
-  position: relative;
+  position: inherit;
   font-size: 36px;
   color: #464242;
   top: 10px;
@@ -99,7 +99,6 @@ body {
   width: 360px;
   height: 360px;
   display: inline-block;
-  position: relative;
   margin-left: 100px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -151,8 +150,9 @@ body {
 
 .mainbox {
   width: 900px;
-  height: 420px;
+  height: 440px;
   display: inline-block;
+
   /*border: 1px solid red;*/
 }
 }
