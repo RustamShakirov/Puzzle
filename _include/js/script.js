@@ -32,8 +32,8 @@ $(document).ready(function() {
     pos.inner = { //Позиция курсора относительно элемента
       left: event.offsetX, top: event.offsetY
     };
-    //$("body").on  //parent.on
-    parent.on('mousemove', function(event) {  // запомнить позицию курсора относит элемента
+    //$("body").on  //parent.on (Работает в пределах сцены).
+    $("body").on('mousemove', function(event) {  // запомнить позицию курсора относит элемента
       pos.parent = parent.offset(); //позиция родителя относитешльно экрана
 
       pos.cursor = { //Позиция курсора относительно экрана
@@ -59,17 +59,10 @@ $(document).ready(function() {
       elem.css(new_pos);
     });
 
-  //   $(document).on('mouseup', function(event) {
-  //
-  //      $(document).off('mouseup');
-  //      $(document).off('mousemove');
-  //   ......
-  // }
-    //elems.on
-    $("body").on('mouseup', function(event) {
-    	var elem = $(this);
-      elem.off("mouseup");  //Снять события перетаскивания и отжатия мыши
-      parent.off("mousemove");
+    $("body").on('mouseup', function(event) { //elems.on(был)
+    	var elem = $(this)
+      elem.off("mouseup")  //Снять события перетаскивания и отжатия мыши
+      $("body").off("mousemove")  //parent.off(был)
     });
   });
 
