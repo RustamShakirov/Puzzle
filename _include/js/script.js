@@ -5,17 +5,17 @@ $(document).ready(function() {
   data.setka = data.scene.find(".setka");
   data.c = [];
   data.s = [];
-  data.body = $(".body")
+  data.body = $("body")
 
-  var c = [];
   for (var i = 0; i < 9; i++) {
     var b = $("<div>", {class: "img img" + i});
     pos = getRandomPos();
+    b.data({begin_pos: pos});     //Сохранить атрибут
     b.css(pos);
     b.appendTo(data.box);
     data.c.push(b);
   }
-  var s = [];
+
   for (var i = 0; i < 9; i++) {
     var a = $("<div>").addClass("b b" + i).appendTo(data.setka)
     data.s.push(a);
@@ -24,12 +24,14 @@ $(document).ready(function() {
   var button = {
     name: "Готово"
   };
-  var body = $("body");
+  var body = data.body;
   var elems = $(".box .img");
   var parent = data.scene;
+
   elems.on('mousedown', function(event) { //Событие нажатия
     var elem = $(this);
     var pos = {};
+
     pos.inner = { //Позиция курсора относительно элемента
       left: event.offsetX, top: event.offsetY
     };
@@ -41,19 +43,22 @@ $(document).ready(function() {
         left: event.pageX, top: event.pageY
       };
 
-      new_pos = { //Новая позиция элемента
+      _pos = { //Новая позиция элемента
         left: pos.cursor.left - pos.parent.left - pos.inner.left,
         top: pos.cursor.top - pos.parent.top - pos.inner.top
       }
-      new_pos = positionScene(new_pos, data);  //Отдельная функция(для сцены)
+
+      new_pos = positionScene(_pos, data);  //Отдельная функция(для сцены)
       elem.css(new_pos);
     });
-    /*Если мышь отпустили за пределами сцены,
-    перетаскиваемый фрагмент должен отлететь на исходную позицию */
     body.on('mouseup', function(event) {
-    	var elem = $(this)
-      elem.off("mouseup")  //Снять события перетаскивания и отжатия мыши
+      if(!inScene(_pos, data)) {
+         begin_pos = returnPosition(elem);
+         elem.css(begin_pos);
+      };
+      body.off('mouseup')    //Снять события перетаскивания и отжатия мыши
       body.off("mousemove")
     });
   });
+
 });
