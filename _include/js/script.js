@@ -6,7 +6,7 @@ $(document).ready(function() {
   data.c = [];
   data.s = [];
   data.body = $("body")
-
+  //ЦИКЛ ДЛЯ ФРАГМЕНТА
   for (var i = 0; i < 9; i++) {
     var b = $("<div>", {class: "img img" + i});
     pos = getRandomPos();
@@ -15,10 +15,14 @@ $(document).ready(function() {
     b.appendTo(data.box);
     data.c.push(b);
   }
-
+  //ЦИКЛ ДЛЯ СЕТКИ
   for (var i = 0; i < 9; i++) {
-    var a = $("<div>").addClass("b b" + i).appendTo(data.setka)
-    data.s.push(a);
+    var grit = $("<div>").addClass("b b" + i).appendTo(data.setka)
+    data.s.push(grit);
+
+    pos = grit.position(); //запомнить позицию клетки
+    grit.data({cell_pos: pos}); //сохранение позиции клетки в дату
+    pos = data.s[i].data().cell_pos
   }
 
   var button = {
@@ -51,11 +55,10 @@ $(document).ready(function() {
       new_pos = positionScene(_pos, data);  //Отдельная функция(для сцены)
       elem.css(new_pos);
     });
+
     body.on('mouseup', function(event) {
-      if(!inScene(_pos, data)) {
-         begin_pos = returnPosition(elem);
-         elem.css(begin_pos);
-      };
+      begin_pos = returnPosition(elem);
+      cell_pos = cellPosition(elem);
       body.off('mouseup')    //Снять события перетаскивания и отжатия мыши
       body.off("mousemove")
     });
