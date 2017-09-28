@@ -76,13 +76,8 @@ $(document).ready(function() {
       else {
         animateElemMove(elem, elem.data().begin_pos)
         //ТАК "placed" БУДЕТ УДАЛЯТЬСЯ ПРИ КЛИКЕ
-        //cell.removeClass("placed")
-      }
-      //ТАК 'placed' БУДЕТ УДАЛЯТЬСЯ ПРИ 'mousedown'
-      elem.on('mousedown', function(event) {
         cell.removeClass("placed")
-      })
-
+      }
       body.off('mouseup')    //Снять события перетаскивания и отжатия мыши
       body.off("mousemove")
     });
