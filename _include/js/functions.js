@@ -14,14 +14,11 @@
     }
     if (_new_pos.left < 0) {
       _new_pos.left = 0;
-    }
-    else if (_new_pos.left > data.scene.width() - 120) {
+    } else if (_new_pos.left > data.scene.width() - 120) {
       _new_pos.left = data.scene.width() - 120;
-    }
-    if (_new_pos.top < 0) {
+    } if (_new_pos.top < 0) {
       _new_pos.top = 0;
-    }
-    else if (_new_pos.top > data.scene.height() - 120) {
+    } else if (_new_pos.top > data.scene.height() - 120) {
       _new_pos.top = data.scene.height() - 120;
     }
     return _new_pos;
@@ -42,16 +39,44 @@
     return pos;
   };
 
-  function inCell(cell_pos, _pos, data) { // УСЛОВИЕ ДЛЯ КЛЕТОК
-    if ((cell_pos.left < _pos.left) || (cell_pos.left > data.setka.width() - 60) ||
-    (cell_pos.top < _pos.top) || (cell_pos.top > data.setka.height() - 60)) {
-      return false
-    } else {
-        return true
+
+
+
+//Можно проверить по координатам
+//Есть ли фрагмент с той же позицией, что и клетка
+// Можно добавить клетке какой-нибудь класс, при размещении в ней фрагмента
+// cell.addClass("placed")
+// Затем проверять, заполнена ли клетка:
+// if (cell.hasClass("placed")) {
+// }
+
+  // УСЛОВИЕ ДЛЯ КЛЕТОК
+  function inCell(elem, cell) {
+    // Позиция фрагмента
+    pos = elem.position()
+    // Позиция центра фрагмента
+    center_pos = {
+      left: pos.left + elem.width()/2,
+      top: pos.top + elem.height()/2,
     }
-  };
-  function cellPosition(elem) {
-    pos = elem.data().cell_pos
-    elem.animate({left: pos.left, top: pos.top}, 1000, function(){});
-    return pos;
-  }
+    // Позиция клетки
+    cell_pos = cell.data().cell_pos
+    cell_size = {
+      width: cell.width(),
+      height: cell.height()
+    }
+
+    res = false
+
+    if ((center_pos.left > cell_pos.left) && (center_pos.left < cell_pos.left + cell_size.width) &&
+      (center_pos.top > cell_pos.top) && (center_pos.top < cell_pos.top + cell_size.height)) {
+        res = true
+      }
+
+      return res;
+    };
+
+    //Общая функция, перемещает фрагмент в произвольную область
+    function animateElemMove(elem, pos) {
+      elem.animate({left: pos.left, top: pos.top}, 1000, function(){});
+    }

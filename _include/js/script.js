@@ -22,7 +22,8 @@ $(document).ready(function() {
 
     pos = grit.position(); //запомнить позицию клетки
     grit.data({cell_pos: pos}); //сохранение позиции клетки в дату
-    pos = data.s[i].data().cell_pos
+    grit.data({"number": i})
+    console.log(grit.data())                                  //pos = data.s[i].data().cell_pos n\
   }
 
   var button = {
@@ -57,8 +58,31 @@ $(document).ready(function() {
     });
 
     body.on('mouseup', function(event) {
-      begin_pos = returnPosition(elem);
-      cell_pos = cellPosition(elem);
+      active_cell = false
+
+      for (var i = 0; i < 9; i++){
+        cell = data.s[i]
+        if (inCell(elem, cell)) {
+          active_cell = cell;
+          break;
+        }
+      }
+
+      if ((active_cell) && (!(cell.hasClass("placed")))) {  //if (cell.hasClass("placed")) {}
+        animateElemMove(elem, active_cell.data().cell_pos)
+        cell.addClass("placed")
+        console.log(cell.data().number)     //elem.data({"cell":})
+      }
+      else {
+        animateElemMove(elem, elem.data().begin_pos)
+        //ТАК "placed" БУДЕТ УДАЛЯТЬСЯ ПРИ КЛИКЕ
+        //cell.removeClass("placed")
+      }
+      //ТАК 'placed' БУДЕТ УДАЛЯТЬСЯ ПРИ 'mousedown'
+      elem.on('mousedown', function(event) {
+        cell.removeClass("placed")
+      })
+
       body.off('mouseup')    //Снять события перетаскивания и отжатия мыши
       body.off("mousemove")
     });
