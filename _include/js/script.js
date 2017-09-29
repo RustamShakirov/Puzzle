@@ -37,7 +37,7 @@ $(document).ready(function() {
 
   elems.on('mousedown', function(event) { //Событие нажатия
     var elem = $(this);
-    var pos = {};
+
 
     active_cell = elem.data().cell
     elem.data({active_cell: null}) //Очистить параметр mouseup  //elem.data({cell: active_cell})
@@ -45,6 +45,7 @@ $(document).ready(function() {
       active_cell.removeClass("placed")
     }
 
+    var pos = {};
     pos.inner = { //Позиция курсора относительно элемента
       left: event.offsetX, top: event.offsetY
     };
