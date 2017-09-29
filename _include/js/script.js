@@ -6,6 +6,7 @@ $(document).ready(function() {
   data.c = [];
   data.s = [];
   data.body = $("body")
+
   //ЦИКЛ ДЛЯ ФРАГМЕНТА
   for (var i = 0; i < 9; i++) {
     var b = $("<div>", {class: "img img" + i});
@@ -19,16 +20,17 @@ $(document).ready(function() {
   for (var i = 0; i < 9; i++) {
     var grit = $("<div>").addClass("b b" + i).appendTo(data.setka)
     data.s.push(grit);
-
     pos = grit.position(); //запомнить позицию клетки
     grit.data({cell_pos: pos}); //сохранение позиции клетки в дату
-    grit.data({"number": i})
-    console.log(grit.data())                                  //pos = data.s[i].data().cell_pos n\
+    grit.data({"number": i}) //цикл
+    //console.log(grit.data())
+                            //pos = data.s[i].data().cell_pos
   }
 
   var button = {
     name: "Готово"
   };
+
   var body = data.body;
   var elems = $(".box .img");
   var parent = data.scene;
@@ -37,11 +39,17 @@ $(document).ready(function() {
     var elem = $(this);
     var pos = {};
 
+    active_cell = elem.data().cell
+    elem.data({active_cell: null}) //Очистить параметр mouseup  //elem.data({cell: active_cell})
+    if (typeof elem.data().cell != "undefined") {  //cell в data фрагмента, условие на  наличие
+      active_cell.removeClass("placed")
+    }
+
     pos.inner = { //Позиция курсора относительно элемента
       left: event.offsetX, top: event.offsetY
     };
-
-    pos.parent = parent.offset(); //позиция родителя относитешльно экрана
+    pos.parent = parent.offset();
+     //позиция родителя относитешльно экрана
     body.on('mousemove', function(event) {  // запомнить позицию курсора относит элемента
 
       pos.cursor = { //Позиция курсора относительно экрана
@@ -55,6 +63,7 @@ $(document).ready(function() {
 
       new_pos = positionScene(_pos, data);  //Отдельная функция(для сцены)
       elem.css(new_pos);
+      console.log();
     });
 
     body.on('mouseup', function(event) {
@@ -67,16 +76,14 @@ $(document).ready(function() {
           break;
         }
       }
-
-      if ((active_cell) && (!(cell.hasClass("placed")))) {  //if (cell.hasClass("placed")) {}
+      if ((active_cell) && (!(active_cell.hasClass("placed")))) {
+        elem.data({cell: active_cell})
+        console.log(elem.data());
         animateElemMove(elem, active_cell.data().cell_pos)
-        cell.addClass("placed")
-        console.log(cell.data().number)     //elem.data({"cell":})
+        active_cell.addClass("placed")
       }
       else {
         animateElemMove(elem, elem.data().begin_pos)
-        //ТАК "placed" БУДЕТ УДАЛЯТЬСЯ ПРИ КЛИКЕ
-        cell.removeClass("placed")
       }
       body.off('mouseup')    //Снять события перетаскивания и отжатия мыши
       body.off("mousemove")
