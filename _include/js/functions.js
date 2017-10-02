@@ -35,7 +35,7 @@
   };
   function returnPosition(elem) {
     pos = elem.data().begin_pos //Получить атрибут b.data({begin_pos: pos});
-    elem.animate({left: pos.left, top: pos.top}, 1000, function(){});
+    elem.animate({left: pos.left, top: pos.top}, 500, function(){});
     return pos;
   };
 
@@ -67,5 +67,5 @@
 
     //Общая функция, перемещает фрагмент в произвольную область
     function animateElemMove(elem, pos) {
-      elem.animate({left: pos.left, top: pos.top}, 1000, function(){});
+      elem.animate({left: pos.left, top: pos.top}, 500, function(){});
     }

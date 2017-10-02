@@ -153,6 +153,16 @@ body {
   width: 900px;
   height: 440px;
   display: inline-block;
+}
 
-  /*border: 1px solid red;*/
+.check {
+ border-radius: 10%;
+ width: 120px;
+ height: 60px;
+ background-color: purple;
+}
+
+.check.disabled {
+pointer-events: none;
+background-color: grey;
 }

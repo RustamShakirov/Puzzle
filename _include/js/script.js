@@ -6,6 +6,7 @@ $(document).ready(function() {
   data.c = [];
   data.s = [];
   data.body = $("body")
+  data.button = $("button")
 
   //ЦИКЛ ДЛЯ ФРАГМЕНТА
   for (var i = 0; i < 9; i++) {
@@ -23,25 +24,20 @@ $(document).ready(function() {
     pos = grit.position(); //запомнить позицию клетки
     grit.data({cell_pos: pos}); //сохранение позиции клетки в дату
     grit.data({"number": i}) //цикл
-    //console.log(grit.data())
-                            //pos = data.s[i].data().cell_pos
   }
 
-  var button = {
-    name: "Готово"
-  };
-
+  var button = data.button;
   var body = data.body;
   var elems = $(".box .img");
   var parent = data.scene;
+
 
   elems.on('mousedown', function(event) { //Событие нажатия
     var elem = $(this);
 
 
     active_cell = elem.data().cell
-    elem.data({active_cell: null}) //Очистить параметр mouseup  //elem.data({cell: active_cell})
-    if (typeof elem.data().cell != "undefined") {  //cell в data фрагмента, условие на  наличие
+    if (typeof active_cell != "undefined") {  //cell в data фрагмента, условие на  наличие
       active_cell.removeClass("placed")
     }
 
@@ -64,7 +60,6 @@ $(document).ready(function() {
 
       new_pos = positionScene(_pos, data);  //Отдельная функция(для сцены)
       elem.css(new_pos);
-      console.log();
     });
 
     body.on('mouseup', function(event) {
@@ -79,16 +74,59 @@ $(document).ready(function() {
       }
       if ((active_cell) && (!(active_cell.hasClass("placed")))) {
         elem.data({cell: active_cell})
-        console.log(elem.data());
+        cell.data({index: i})
         animateElemMove(elem, active_cell.data().cell_pos)
         active_cell.addClass("placed")
       }
       else {
         animateElemMove(elem, elem.data().begin_pos)
       }
+
+
+      function gridFull(data){
+        var res = false
+
+         for (i = 0; i < 9; i++) {
+           elem = data.c[i]
+           cell = elem.data().cell;
+           if (cell == undefined) {
+             res = true
+             break;
+           }
+         }
+
+         return res;
+         }
+
+         if (gridFull(data)){
+           button.addClass("disabled")
+         }
+         else {
+           button.removeClass("disabled")
+         }
+
+
       body.off('mouseup')    //Снять события перетаскивания и отжатия мыши
       body.off("mousemove")
     });
-  });
 
+    button.on('click', function(event) {
+      for (var i = 0; i < 9; i++) {
+        elem = data.c[i]
+        cell = elem.data().cell
+
+        cell_index = cell.data().index
+        if (i == cell_index) {
+          true
+        }
+        else {
+          animateElemMove(elem, elem.data().begin_pos)
+          cell.removeClass("placed");
+        }
+      }
+      button.off('click')
+   });
+
+
+  });
 });
