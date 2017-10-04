@@ -31,75 +31,86 @@ body {
 
 .scene .title {
   display: inline-block;
-  position: relative;
+  position: inherit;
   font-size: 36px;
   color: #464242;
   top: 10px;
 }
 
-.setka  {
-  width: 380px;
-  height: 380px;
+.setka{
+  width: 360px;
+  height: 360px;
   display: inline-block;
-  /*border: 1px solid white;*/
+  /*font-size: 0px;*/
+
+  /*border: 1px solid red;*/
 }
 
 .setka .b{
   width: 120px;
   height: 120px;
-  border: 1px solid blue;
+  border: 1px solid indigo;
   float: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .setka .b0{
   border-right:  none;
   border-bottom: none;
-}
+
+  }
 
 .setka .b1{
   border-bottom: none;
   border-right: none;
-}
+  }
 
 .setka .b2{
-  border-bottom: none
+    border-bottom: none
+
 }
 
 .setka .b3{
   border-right: none;
   border-bottom: none;
-}
+  }
 
 .setka .b4{
   border-right: none;
   border-bottom: none;
-}
+  }
 
 .setka .b5{
   border-bottom: none;
-}
+  }
 
 .setka .b6{
-  border-right: none;
+    border-right: none;
 }
 
 .setka .b7{
-  border-right: none;
+    border-right: none;
 }
 
 .setka .b8{
-}
+  }
 
 .box {
+  width: 360px;
+  height: 360px;
   display: inline-block;
-  margin-left: 400px;
-  /*border: 1px solid black;*/
+  margin-left: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /*border: 1px solid green;*/
 }
 
 .box .img{
   width: 120px;
   height: 120px;
   position: absolute;
+
 }
 
 .box .img0{
@@ -107,7 +118,7 @@ body {
 }
 
 .box .img1{
-  background-image: url('../img/0_1.png');
+    background-image: url('../img/0_1.png');
 }
 
 .box .img2{
@@ -123,7 +134,7 @@ body {
 }
 
 .box .img5{
-  background-image: url('../img/1_2.png');
+    background-image: url('../img/1_2.png');
 }
 
 .box .img6{
@@ -135,12 +146,37 @@ body {
 }
 
 .box .img8{
-  background-image: url('../img/2_2.png');
+    background-image: url('../img/2_2.png');
   }
 
 .mainbox {
   width: 900px;
-  height: 420px;
+  height: 440px;
   display: inline-block;
-  /*border: 1px solid red;*/
+}
+
+button {
+ border-radius: 10%;
+ width: 120px;
+ height: 60px;
+}
+
+.disabled {
+pointer-events: none;
+background: grey;
+}
+
+.danger {
+  background: red;
+}
+.scene .message{
+ width: 300px;
+ height: 50px;
+ border: 6px solid indigo;
+ background: aqua;
+ color: red;
+ position: absolute;
+ right: 20px;
+ bottom: 30px;
+ display: none;
 }
