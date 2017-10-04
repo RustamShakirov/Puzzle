@@ -69,3 +69,65 @@
     function animateElemMove(elem, pos) {
       elem.animate({left: pos.left, top: pos.top}, 500, function(){});
     }
+
+    //Проверка сцены
+    function sceneInvisible(data) {
+      var res = true
+      for (i = 0; i < 9; i++) {
+        elem = data.c[i]
+        cell = elem.data().cell
+        cell_index = cell.data().index
+        if (i != cell_index) {
+          res = false
+          break;
+        }
+    }
+      return res;
+    };
+
+    //Проверка кнопки
+    function gridFull(data){
+      var res = true
+      for (i = 0; i < 9; i++) {
+         elem = data.s[i]
+         if (!elem.hasClass("placed")) {
+           res = false
+           break;
+         }
+       }
+
+       return res;
+     };
+
+     //Проверка размещения фрагмента
+    function cellIsCorrect(elem, i) {
+      var res = false
+      var cell = elem.data().cell
+      var cell_index = cell.data().index
+      if (i == cell_index) {
+        res = true
+      }
+      return res;
+    };
+
+    //кнопка “Готово” загорается красным цветом
+    function buttonDanger(button) {
+      var defer = $.Deferred();
+      button.addClass("danger");
+      setTimeout(function() {
+       button.removeClass("danger");
+       defer.resolve();
+      }, 1000);
+     return defer;
+   };
+
+    //фрагменты блокируются (нельзя перетащить)
+    function elemsDisabled(elems) {
+      var defer = $.Deferred();
+      elems.addClass("disabled");
+      setTimeout(function() {
+        elems.removeClass("disabled");
+        defer.resolve();
+      }, 5000);
+      return defer
+    };
